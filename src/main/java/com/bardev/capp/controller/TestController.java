@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class TestController {
-    @RequestMapping("/test/hello")
+    @RequestMapping("/api/hello")
     public String helloWorld(){
         return "hello" ; // -> /WEB-INF/view/hello.jsp
     }

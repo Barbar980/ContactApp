@@ -23,7 +23,6 @@ public class ContactAppDispatcherServletInitializer extends AbstractAnnotationCo
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        super.onStartup(servletContext); //must present
-        //Configure global task here if required
+        super.onStartup(servletContext);
     }  
 }
