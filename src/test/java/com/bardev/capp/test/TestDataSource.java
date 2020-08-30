@@ -13,8 +13,12 @@ public class TestDataSource {
         DataSource ds = ctx.getBean(DataSource.class);
         JdbcTemplate jt = new JdbcTemplate(ds);
         String sql = "INSERT INTO user("
-                + "`name`, `phone`, `email`,"
-                + "`address`, `loginName`, `password`) "
+                + "`name`, "
+                + "`phone`, "
+                + "`email`,"
+                + "`address`, "
+                + "`loginName`, "
+                + "`password`) "
                 + "VALUES(?, ?, ?, ?, ?, ?)";
         Object[] param = new Object[]{"Krzysztof", "123456789", "mail@test.pl", "addres", "krzb", "krzb"};
         jt.update(sql, param);
