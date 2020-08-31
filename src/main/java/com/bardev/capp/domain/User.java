@@ -11,20 +11,7 @@ public class User {
     private String password;
     private Integer role;
     private Integer loginStatus;
-
-    public User(String name, String phone, String email, String address, String loginName, String password, Integer role, Integer loginStatus) {
-        this.name = name;
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
-        this.loginName = loginName;
-        this.password = password;
-        this.role = role;
-        this.loginStatus = loginStatus;
-    }
-
-    
-    
+      
     public Integer getUserId() {
         return userId;
     }
