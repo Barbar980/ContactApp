@@ -57,7 +57,7 @@ public class UserDAOImpl extends BaseDAO implements UserDAO{
 
     @Override
     public void delete(User u) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.delete(u.getUserId());
     }
 
     @Override

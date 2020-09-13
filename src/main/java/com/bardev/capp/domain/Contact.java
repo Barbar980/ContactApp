@@ -7,7 +7,7 @@ public class Contact {
     private String name;
     private String phone;
     private String email;
-    private String addres;
+    private String address;
     private String remark;
 
     public Integer getContactId() {
@@ -50,12 +50,12 @@ public class Contact {
         this.email = email;
     }
 
-    public String getAddres() {
-        return addres;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddres(String addres) {
-        this.addres = addres;
+    public void setAddress(String addres) {
+        this.address = addres;
     }
 
     public String getRemark() {
