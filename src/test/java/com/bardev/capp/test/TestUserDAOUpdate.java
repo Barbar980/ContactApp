@@ -9,6 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class TestUserDAOUpdate {
     
     public static void main(String[] args){
+        
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringRootConfig.class);
         UserDAO userDAO = ctx.getBean(UserDAO.class);
         User u = new User();
