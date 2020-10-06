@@ -1,4 +1,4 @@
-package com.bardev.capp.test;
+package com.bardev.capp.test.user;
 
 import com.bardev.capp.config.SpringRootConfig;
 import com.bardev.capp.dao.UserDAO;
@@ -16,13 +16,11 @@ public class TestUserDAOSave {
         u.setPhone("test");
         u.setEmail("test@test.abc");
         u.setAddress("test");
-        u.setLoginName("test");
+        u.setLoginName("test123");
         u.setPassword("test");
         u.setRole(1);
         u.setLoginStatus(1);      
-        userDAO.save(u);
-        userDAO.delete(15);
-        u.setName("test");
+        userDAO.save(u);      
         System.out.print("---Data Saved---");
     }
 }

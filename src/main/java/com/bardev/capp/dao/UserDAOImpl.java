@@ -1,6 +1,7 @@
 package com.bardev.capp.dao;
 
 import com.bardev.capp.domain.User;
+import com.bardev.capp.rm.UserRowMapper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,17 +69,24 @@ public class UserDAOImpl extends BaseDAO implements UserDAO{
 
     @Override
     public User findById(Integer userId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT userId, name, phone, email, address, loginName, role, loginStatus"
+                    + " FROM user WHERE userId=?";
+        User u = getJdbcTemplate().queryForObject(sql, new UserRowMapper(), userId);
+        return u;
     }
 
     @Override
     public List<User> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "SELECT userId, name, phone, email, address, loginName, role, loginStatus"
+                    + " FROM user";
+        List<User> users = getJdbcTemplate().query(sql, new UserRowMapper());
+        return users;
     }
 
     @Override
-    public List<User> findByProperty(String propname, Object propValue) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    public List<User> findByProperty(String propName, Object propValue) {
+        String sql = "SELECT userId, name, phone, email, address, loginName, role, loginStatus"
+                    + " FROM user WHERE "+propName+"=?";
+        return getJdbcTemplate().query(sql, new UserRowMapper(), propValue);
+    }   
 }

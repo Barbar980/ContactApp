@@ -1,4 +1,4 @@
-package com.bardev.capp.test.user;
+package com.bardev.capp.test;
 
 import com.bardev.capp.config.SpringRootConfig;
 import com.bardev.capp.dao.UserDAO;

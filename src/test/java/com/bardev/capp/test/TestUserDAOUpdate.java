@@ -1,4 +1,4 @@
-package com.bardev.capp.test.user;
+package com.bardev.capp.test;
 
 import com.bardev.capp.config.SpringRootConfig;
 import com.bardev.capp.dao.UserDAO;
@@ -12,8 +12,8 @@ public class TestUserDAOUpdate {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringRootConfig.class);
         UserDAO userDAO = ctx.getBean(UserDAO.class);
         User u = new User();
-        u.setUserId(26);
-        u.setName("asxdas");
+        u.setUserId(15);
+        u.setName("nameUpdate");
         u.setPhone("numberUpdate");
         u.setEmail("@Update");
         u.setAddress("adresUpdate");

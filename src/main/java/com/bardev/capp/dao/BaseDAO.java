@@ -9,7 +9,5 @@ abstract public class BaseDAO extends NamedParameterJdbcDaoSupport {
     @Autowired
     public void setDataSource2(DataSource ds){
         super.setDataSource(ds);
-    }
-    
-    
+    } 
 }
