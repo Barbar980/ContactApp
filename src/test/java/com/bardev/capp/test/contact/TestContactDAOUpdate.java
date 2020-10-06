@@ -1,25 +1,28 @@
-package com.bardev.capp.test.contact;
+package com.bardev.capp.test;
 
 import com.bardev.capp.config.SpringRootConfig;
-import com.bardev.capp.dao.ContactDAO;
-import com.bardev.capp.domain.Contact;
+import com.bardev.capp.dao.UserDAO;
+import com.bardev.capp.domain.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class TestContactDAOUpdate {
+public class TestUserDAOSave {
     
     public static void main(String[] args){
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringRootConfig.class);
-        ContactDAO contactDAO = ctx.getBean(ContactDAO.class);
-        Contact c = new Contact();
-        c.setContactId(6);
-        c.setUserId(26);
-        c.setName("nameUpdate");
-        c.setPhone("numberUpdate");
-        c.setEmail("emailUpdate");
-        c.setAddress("addressUpdate");
-        c.setRemark("remarkUpdate");
-        contactDAO.update(c);
-        System.out.print("---Data Update---");
+        UserDAO userDAO = ctx.getBean(UserDAO.class);
+        User u = new User();
+        u.setName("test");
+        u.setPhone("test");
+        u.setEmail("test@test.abc");
+        u.setAddress("test");
+        u.setLoginName("test");
+        u.setPassword("test");
+        u.setRole(1);
+        u.setLoginStatus(1);      
+        userDAO.save(u);
+        userDAO.delete(15);
+        u.setName("test");
+        System.out.print("---Data Saved---");
     }
 }
