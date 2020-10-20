@@ -3,8 +3,5 @@
 - napisac i przetestowac findByIDcontact
 - napisac i przetestowac findAllContact
 - napisac i przetestowac findByPropertyContact
-
 - przetestowac TestUserServiceRegister
-
-
-zaczad odc 19
+do odc 19!
