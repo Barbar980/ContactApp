@@ -78,8 +78,7 @@ public class ContactDAOImpl extends BaseDAO implements ContactDAO{
     public List<Contact> findAll() {
         String sql = "SELECT contactId, userId, name, phone, email, address, remark"
                     + " FROM contact";
-        List<Contact> contacs = getJdbcTemplate().query(sql, new ContactRowMapper());
-        return contacs;
+        return getJdbcTemplate().query(sql, new ContactRowMapper());
     }
 
     @Override
