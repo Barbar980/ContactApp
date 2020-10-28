@@ -20,22 +20,25 @@
             <tr>
                 <td height="80px">
                     <%-- Header --%>
-                    <h1>Contact App - Project</h1>
+                    <jsp:include page="include/header.jsp"/>
                 </td>                
             </tr>
             <tr>
                 <td height="25px"> 
                     <%-- Menu --%>
+                    <jsp:include page="include/menu.jsp"/>
                 </td>   
             </tr>
             <tr>
-                <td height="350px">
+                <td height="350px" valign="top">
                     <%-- Page Content Area --%>
+                    <h1>User Login</h1>
                 </td> 
             </tr>
             <tr>
                 <td height="25px"> 
                     <%-- Footer --%>
+                    <jsp:include page="include/footer.jsp"/>
                 </td>   
             </tr>
             
