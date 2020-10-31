@@ -1,17 +1,43 @@
-<%-- 
-    Document   : dashboard_user.jsp
-    Created on : 28 paź 2020, 19:30:52
-    Author     : Barbar
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>User Dashboard - Contact Application</title>
+        <s:url var="url_css" value="/static/css/style.css"/>
+        <link href="${url_css}" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
-        <h1>Hello World!</h1>
+    <s:url var="url_bg" value="/static/images/bg.jpg"/>
+    <body background="${url_bg}">
+        <table border="1" width="80%" align="center">
+            <tr>
+                <td height="80px">
+                    <%-- Header --%>
+                    <jsp:include page="include/header.jsp"/>
+                </td>                
+            </tr>
+            <tr>
+                <td height="25px"> 
+                    <%-- Menu --%>
+                    <jsp:include page="include/menu.jsp"/>
+                </td>   
+            </tr>
+            <tr>
+                <td height="350px" valign="top">
+                    <%-- Page Content Area --%>
+                    <h1>User Login</h1>
+                </td> 
+            </tr>
+            <tr>
+                <td height="25px"> 
+                    <%-- Footer --%>
+                    <jsp:include page="include/footer.jsp"/>
+                </td>   
+            </tr>
+            
+            
+        </table>
     </body>
 </html>
