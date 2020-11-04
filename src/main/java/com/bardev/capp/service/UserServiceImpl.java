@@ -40,13 +40,18 @@ public class UserServiceImpl extends BaseDAO implements UserService{
         }
     }
 
-    @Override
+    
     public List<User> getUserList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void changeLoginStatus(Integer userId, Integer loginStatus) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<User> userList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
