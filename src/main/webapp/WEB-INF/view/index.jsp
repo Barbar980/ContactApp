@@ -35,6 +35,12 @@
                 <td height="350px" valign="top">
                     <%-- Page Content Area --%>
                     <h3>User Login</h3>
+                    <c:if test="${err!=null}">
+                        <p class="error">${err}</p>
+                            
+                            
+                        
+                    </c:if>
                     <s:url var="url_login" value="/login"/>
                     <f:form action="${url_login}" modelAttribute="command">
                         <table border="1">
@@ -45,7 +51,7 @@
                             
                             <tr>
                                 <td>Password</td>  
-                                <td><f:input path="password" /></td>  
+                                <td><f:password path="password" /></td>  
                             </tr> 
                             
                              <tr>

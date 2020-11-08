@@ -12,14 +12,14 @@ public class TestUserDAOSave {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringRootConfig.class);
         UserDAO userDAO = ctx.getBean(UserDAO.class);
         User u = new User();
-        u.setName("test");
-        u.setPhone("test");
-        u.setEmail("test@test.abc");
-        u.setAddress("test");
-        u.setLoginName("test123");
-        u.setPassword("test");
-        u.setRole(1);
-        u.setLoginStatus(1);      
+        u.setName("admin");
+        u.setPhone("admin");
+        u.setEmail("admin");
+        u.setAddress("admin");
+        u.setLoginName("admin");
+        u.setPassword("admin");
+        u.setRole(2);
+        u.setLoginStatus(2);      
         userDAO.save(u);      
         System.out.print("---Data Saved---");
     }
