@@ -5,3 +5,5 @@
 - napisac i przetestowac findByPropertyContact
 - przetestowac TestUserServiceRegister
 do odc 19!
+
+
