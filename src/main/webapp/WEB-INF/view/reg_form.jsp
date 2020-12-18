@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 26 paź 2020, 22:22:56
-    Author     : Barbar
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="f" %>
@@ -12,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>User Login - Contact Application</title>
+        <title>User Registration</title>
         <s:url var="url_css" value="/static/css/style.css"/>
         <link href="${url_css}" rel="stylesheet" type="text/css"/>
     </head>
@@ -33,34 +27,41 @@
             </tr>
             <tr>
                 <td height="350px" valign="top">
-                    <%-- Page Content Area --%>
-                    <h3>User Login</h3>
+                    <%-- Page Content Area--%>
+                    <h3>User Registration</h3>
                     <c:if test="${err!=null}">
-                        <p class="error">${err}</p>                                                                            
-                    </c:if>
-                    <c:if test="${param.act eq 'lo'}">
-                        <p class="success">Logout successfully</p>                                                                            
-                    </c:if>     
-                    <c:if test="${param.act eq 'reg'}">
-                        <p class="success">User Registered Succesffully</p>                                                                            
-                    </c:if>    
-                    <s:url var="url_login" value="/login"/>
-                    <f:form action="${url_login}" modelAttribute="command">
+                        <p class="error">${err}</p>
+                    </c:if>                  
+                    <s:url var="url_reg"  value="/register"/>
+                    <f:form action="${url_reg}" modelAttribute="command">
                         <table border="1">
                             <tr>
+                                <td>Name</td>  
+                                <td><f:input path="user.name" /></td>  
+                            </tr>  
+                            <tr>
+                                <td>Phone</td>  
+                                <td><f:input path="user.phone" /></td>  
+                            </tr> 
+                            <tr>
+                                <td>Email</td>  
+                                <td><f:input path="user.email" /></td>  
+                            </tr>  
+                            <tr>
+                                <td>Address</td>  
+                                <td><f:textarea path="user.address" /></td>  
+                            </tr>  
+                            <tr>
                                 <td>Username</td>  
-                                <td><f:input path="loginName" /></td>  
-                            </tr>   
-                            
+                                <td><f:input path="user.loginName" /></td>  
+                            </tr>                              
                             <tr>
                                 <td>Password</td>  
-                                <td><f:password path="password" /></td>  
-                            </tr> 
-                            
+                                <td><f:password path="user.password" /></td>  
+                            </tr>                                                        
                              <tr>
                                  <td colspan="2" align="right">
-                                     <button>Login</button> <br/>
-                                     <a href="#">New User Registration</a>
+                                     <button>Submit</button> <br/>
                                  </td>  
                             </tr>                            
                         </table>
