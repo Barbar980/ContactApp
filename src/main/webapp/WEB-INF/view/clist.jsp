@@ -1,6 +1,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="s" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,7 +28,55 @@
             <tr>
                 <td height="350px" valign="top">
                     <%-- Contact List --%>
-                    <h1>User Dashboard</h1>
+                    <h3 style="color: white;">Contact List</h3>
+                    <c:if test="${param.act eq 'sv'}">
+                        <p class="success">Contact Saved Successfully</p>
+                    </c:if>
+                     <c:if test="${param.act eq 'del'}">
+                        <p class="success">Contact Deleted Successfully</p>
+                    </c:if> 
+                        
+                    <form action="<s:url value="/user/contact_search"/>">
+                        <input type="text" name="freeText" placeholder="Enter Text To Search"> 
+                        <button>Search</button>                           
+                     </form>
+                    <br/>
+                        
+                    <table border = "1" cellpadding="7">
+                        <tr style="color: white;">
+                            <td >SR</td>
+                            <td>CID</td>
+                            <td>NAME</td>
+                            <td>PHONE</td>
+                            <td>EMAIL</td>
+                            <td>ADDRESS</td>
+                            <td>REMARK</td>
+                            <td>ACTION</td>
+                        </tr>                             
+                        <c:if test="${empty contactList}">
+                            <tr>
+                                <td colspan="8" class="error">No Records Present</td>
+                            </tr>
+                        </c:if>
+                        <c:forEach var="c" items="${contactList}" varStatus="st">                          
+                        <tr style="color: white;">
+                            <td>${st.count}</td>
+                            <td>${c.contactId}</td>
+                            <td>${c.name}</td>
+                            <td>${c.phone}</td>
+                            <td>${c.email}</td>
+                            <td>${c.address}</td>
+                            <td>${c.remark}</td>
+                            <s:url var="url_del" value="/user/del_contact">
+                                <s:param name="cid" value="${c.contactId}"/>
+                            </s:url>
+                            <s:url var="url_edit" value="/user/edit_contact">
+                                <s:param name="cid" value="${c.contactId}"/>
+                            </s:url>
+                            <td><a href="${url_edit}">Edit</a> | <a href="${url_del}">Delete</a></td>
+                        </tr> 
+                        </c:forEach>
+                    </table>                 
                 </td> 
             </tr>
             <tr>
@@ -36,8 +85,6 @@
                     <jsp:include page="include/footer.jsp"/>
                 </td>   
             </tr>
-            
-            
         </table>
     </body>
 </html>
